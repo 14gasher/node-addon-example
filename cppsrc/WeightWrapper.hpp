@@ -71,7 +71,7 @@ class WeightWrapper : public Napi::ObjectWrap<WeightWrapper<R, S>>
         Napi::HandleScope scope(env);
         auto toAddWrapped = info[0].As<Napi::Object>();
         auto toAdd = Napi::ObjectWrap<WeightWrapper<R, S>>::Unwrap(toAddWrapped);
-        auto weightToAdd = *(toAdd->actualWeight) - *(this->actualWeight);
+        auto weightToAdd = *(this->actualWeight) - *(toAdd->actualWeight);
         return WeightWrapper::constructor.New({Napi::Number::New(env, weightToAdd.count())});
     }
 
