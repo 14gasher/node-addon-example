@@ -32,3 +32,5 @@ Then run the following to compile the c++ to your machine (make sure you have CM
 Finally, run the following to run the node program that calls the c++ module.
 
 `yarn start` or `npm run start`
+
+# Unit Tests
