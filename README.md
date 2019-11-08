@@ -34,3 +34,5 @@ Finally, run the following to run the node program that calls the c++ module.
 `yarn start` or `npm run start`
 
 # Unit Tests
+
+After running the build command, the UnitTestRunner can be found in the build folder, and runs all the tests for the weight.hpp class.
