@@ -42,6 +42,7 @@ class WeightWrapper : public Napi::ObjectWrap<WeightWrapper<R, S>>
   private:
     static Napi::FunctionReference constructor; // Reference to store the constructor for JS
     static std::string name;                    // Reference to store the name for JS
+    usu::weight<R, S>* actualWeight;            // Actual Weight reference
 
     Napi::Value count(const Napi::CallbackInfo& info)
     {
@@ -74,8 +75,6 @@ class WeightWrapper : public Napi::ObjectWrap<WeightWrapper<R, S>>
         auto weightToAdd = *(this->actualWeight) - *(toAdd->actualWeight);
         return WeightWrapper::constructor.New({Napi::Number::New(env, weightToAdd.count())});
     }
-
-    usu::weight<R, S>* actualWeight;
 };
 
 template <class R, class S>
